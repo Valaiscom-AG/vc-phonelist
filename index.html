@@ -25,233 +25,47 @@
     </style>
   </head>
   <body>
-    <div class="d-flex justify-content-center align-items-center flex-wrap m-5">
-      <button
-        type="button"
-        class="btn btn-light m-3 content-start"
-        data-bs-toggle="button"
-        id="darkModeToggle"
-      >
+    <div class="search-bar mb-3 mt-3 ms-3">
+      <input type="text" id="searchInputRegion" class="form-control w-25" placeholder="Suche..">
+      <button type="button" class="btn btn-light content-start mt-3" data-bs-toggle="button" id="darkModeToggle"
+        aria-pressed="false">
         Hintergrund
       </button>
-      <div
-        id="list_view"
-        class="table-responsive w-100 rounded-5 border border-5 border-danger"
-      >
-        <table
-          id="ranking_table"
-          class="table table-striped table-hover table-bordered border-danger text-center fs-1"
-        >
-          <thead>
-            <tr class="">
-              <th scope="col" class="bg-danger">Mitarbeiter & Abteilung</th>
-              <th scope="col" class="bg-danger">Intern</th>
-              <th scope="col" class="bg-danger">Mobile</th>
-            </tr>
-          </thead>
-          <tbody class="text-center">
-            <tr>
-              <th
-                scope="row"
-                class="bg-danger text-center text-decoration-underline"
-              >
-                Geschäftsführung
-              </th>
-              <td class="bg-danger"></td>
-              <td class="bg-danger"></td>
-            </tr>
-            <tr>
-              <th scope="row">Pascal Ebener</th>
-              <td>11</td>
-              <td>079 865 66 76</td>
-            </tr>
-            <tr>
-              <th
-                scope="row"
-                class="bg-danger text-center text-decoration-underline"
-              >
-                Finanzen
-              </th>
-              <td class="bg-danger">10</td>
-              <td class="bg-danger"></td>
-            </tr>
-            <tr>
-              <th scope="row">Jasmin Eyholzer</th>
-              <td>12</td>
-              <td>079 301 21 28</td>
-            </tr>
-            <tr>
-              <th scope="row">Antonela Latic</th>
-              <td>13</td>
-              <td>079 740 88 04</td>
-            </tr>
-            <tr>
-              <th scope="row">Marina Kovac</th>
-              <td>14</td>
-              <td>079 938 95 69</td>
-            </tr>
-          </tbody>
-          <tbody class="text-center">
-            <tr>
-              <th
-                scope="row"
-                class="bg-danger text-center text-decoration-underline"
-              >
-                Kundendienst
-              </th>
-              <td class="bg-danger">20</td>
-              <td class="bg-danger"></td>
-            </tr>
-            <tr>
-              <th scope="row">Franziska Rieder</th>
-              <td>21</td>
-              <td>079 531 03 05</td>
-            </tr>
-            <tr>
-              <th scope="row">Laureta Krasniqi</th>
-              <td>22</td>
-              <td>076 237 73 12</td>
-            </tr>
-            <tr>
-              <th scope="row">Mira Briggeler</th>
-              <td>23</td>
-              <td>078 827 80 31</td>
-            </tr>
-            <tr>
-              <th scope="row">Barbara Anthamatten</th>
-              <td>24</td>
-              <td>079 379 74 75</td>
-            </tr>
-            <tr>
-              <th scope="row">Michela Eggel</th>
-              <td>25</td>
-              <td>079 725 17 05</td>
-            </tr>
-            <tr>
-              <th scope="row">Mariana Castro</th>
-              <td>26</td>
-              <td>079 939 68 20</td>
-            </tr>
-            <tr>
-              <th scope="row">Loris Hildenbrand</th>
-              <td>27</td>
-              <td>076 295 70 76</td>
-            </tr>
-            <tr>
-              <th scope="row">Tim Luginbühl</th>
-              <td>28</td>
-              <td>079 898 27 70</td>
-            </tr>
-            <tr>
-              <th scope="row" class="bg-danger">Backoffice (Danet)</th>
-              <td class="bg-danger">60</td>
-              <td class="bg-danger"></td>
-            </tr>
-            <tr>
-              <th scope="row">Backoffice 1</th>
-              <td>61</td>
-              <td></td>
-            </tr>
-            <tr>
-              <th scope="row">Backoffice 2</th>
-              <td >62</td>
-              <td></td>
-            </tr>
-          </tbody>
-          <tbody class="text-center">
-            <tr>
-              <th
-                scope="row"
-                class="bg-danger text-center text-decoration-underline"
-              >
-                Technik
-              </th>
-              <td class="bg-danger">30</td>
-              <td 30 class="bg-danger"></td>
-            </tr>
-            <tr>
-              <th scope="row">Stefan Witschard</th>
-              <td>31</td>
-              <td>079 775 61 02</td>
-            </tr>
-            <tr>
-              <th scope="row">Samuel Fux</th>
-              <td>32</td>
-              <td>077 457 89 33</td>
-            </tr>
-            <tr>
-              <th scope="row">David Kurmann</th>
-              <td>33</td>
-              <td>077 496 68 42</td>
-            </tr>
-            <tr>
-              <th scope="row">Alexandre Da Costa</th>
-              <td>34</td>
-              <td>076 668 77 16</td>
-            </tr>
-            <tr>
-              <th scope="row">Rodrigo Batista</th>
-              <td>35</td>
-              <td>076 709 78 67</td>
-            </tr>
-            <tr>
-              <th scope="row">Aurel Schönenberger</th>
-              <td>36</td>
-              <td>079 907 10 94</td>
-            </tr>
-               <tr>
-              <th scope="row">Tobias Summermatter</th>
-              <td></td>
-              <td>078 772 50 76</td>
-            </tr>
-          </tbody>
-          <tbody class="text-center">
-            <tr>
-              <th
-                scope="row"
-                class="bg-danger text-center text-decoration-underline"
-              >
-                Verkauf
-              </th>
-              <td class="bg-danger">40</td>
-              <td class="bg-danger"></td>
-            </tr>
-            <tr>
-              <th scope="row">Patrick Bregy</th>
-              <td>42</td>
-              <td>076 761 15 61</td>
-            </tr>
-            <tr>
-              <th scope="row">Thomas Manz</th>
-              <td>43</td>
-              <td>079 352 66 06</td>
-            </tr>
-            <tr>
-              <th scope="row">Nico Ebener</th>
-              <td>44</td>
-              <td>077 418 99 30</td>
-            </tr>
-          </tbody>
-          <tbody class="text-center">
-            <tr>
-              <th
-                scope="row"
-                class="bg-danger text-center text-decoration-underline"
-              >
-                Marketing
-              </th>
-              <td class="bg-danger">50</td>
-              <td class="bg-danger"></td>
-            </tr>
-            <tr>
-              <th scope="row">Aaron Karlen</th>
-              <td>51</td>
-              <td>079 566 67 86</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
     </div>
+    <div class="d-flex justify-content-center align-items-center flex-wrap m-2" style="width: 400px;">
+      <script>
+        document.getElementById('searchInputRegion').addEventListener('input', function () {
+          let filter = this.value.toLowerCase();
+          let rows = document.querySelectorAll('#phone-tables tbody tr');
+
+          rows.forEach(row => {
+            let cells = row.querySelectorAll('td');
+            let match = false;
+            cells.forEach(cell => {
+              if (cell.innerText.toLowerCase().includes(filter)) {
+                match = true;
+              }
+            });
+            row.style.display = match ? '' : 'none';
+          });
+        });
+      </script>
+      <table class="table table-responsive table-hover table-striped border border-3 border-danger"
+        style="width: 400px;margin-left: 10px;" id="phone-tables">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Intern</th>
+                <th scope="col">Extern</th>
+            </tr>
+        </thead>
+        <tbody id="phone-table">
+          <!-- Dynamic employee rows will be generated here -->
+        </tbody>
+        </table>
+    </div>
+    <!-- Link to the external JavaScript file -->
+    <script type="module" src="js/app.js"></script>
     <script>
       // Function to set a cookie
       function setCookie(name, value, days) {
