@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Function to fetch and render employees
     async function fetchAndRenderPhonelist() {
         const { data, error } = await supabase.from('employees')
-        .select('firstname, lastname, intphone, extphone');
+        .select('firstname, lastname, intphone, extphone, mobphone');
         if (error) {
             console.error('Error fetching employees:', error.message);
             return;
@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <td class="pt-3">${employee.firstname} ${employee.lastname}</td>
                 <td class="pt-3">${employee.intphone}</td>
                 <td class="pt-3">${employee.extphone}</td>
+                <td class="pt-3"><div class="collapse" id="collapseExample">
+                ${employee.mobphone}
+              </div></td>
             `;
             employeeTableBody.appendChild(row);
         });
