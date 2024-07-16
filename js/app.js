@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const { createClient } = await import('https://cdn.skypack.dev/@supabase/supabase-js');
     const supabaseUrl = 'https://ilmufbxfsvyhpaqwdyxg.supabase.co';
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlsbXVmYnhmc3Z5aHBhcXdkeXhnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcxODI1OTc3NywiZXhwIjoyMDMzODM1Nzc3fQ.wdL26ds_JBVuEl_6e8TBQxRxa1Pqz2JmLQOlARKHJdE';
-
+  
     const supabase = createClient(supabaseUrl, supabaseKey);
 
     // Function to fetch and render employees
     async function fetchAndRenderPhonelist() {
         const { data, error } = await supabase.from('employees')
-        .select('firstname, lastname, intphone, extphone, mobphone');
+            .select('firstname, lastname, intphone, extphone, mobphone, department');
         if (error) {
             console.error('Error fetching employees:', error.message);
             return;
@@ -16,6 +16,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Log data to inspect its structure
         console.log('Fetched data:', data);
+
+        // Sort data by department and then by internal phone number within each department
+        data.sort((a, b) => {
+            if (a.department === b.department) {
+                return a.intphone - b.intphone; // Sort by intphone if in the same department
+            }
+            return a.department.localeCompare(b.department); // Sort by department
+        });
 
         const employeeTableBody = document.getElementById('phone-table');
         employeeTableBody.innerHTML = '';
@@ -30,6 +38,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <td class="pt-3"><div class="collapse" id="collapseExample">
                 ${employee.mobphone}
               </div></td>
+                <td class="pt-3 d-none">${employee.department}</td>
             `;
             employeeTableBody.appendChild(row);
         });
