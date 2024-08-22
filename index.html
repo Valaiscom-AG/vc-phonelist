@@ -73,7 +73,7 @@
   </nav>
     <div class="container mt-3">
       <div class="search-bar mb-3">
-        <input type="text" id="searchInputRegion" class="form-control" placeholder="Suche.." />
+        <input type="text" id="searchInput" class="form-control d-none" placeholder="Suche.." />
       </div>
 
       <div class="table-responsive d-flex justify-content-center align-items-center flex-wrap">
@@ -235,6 +235,22 @@
               themeIcon.classList.add('bi-moon'); // Switch to moon icon for dark mode
             }
           });
+
+  document.getElementById('searchInput').addEventListener('input', function () {
+    let filter = this.value.toLowerCase();
+    let rows = document.querySelectorAll('#phone-table tbody tr');
+
+    rows.forEach(row => {
+      let cells = row.querySelectorAll('td');
+      let match = false;
+      cells.forEach(cell => {
+        if (cell.innerText.toLowerCase().includes(filter)) {
+          match = true;
+        }
+      });
+      row.style.display = match ? '' : 'none';
+    });
+  });
         </script>
     <script src="js/app.js"></script>
   </body>
